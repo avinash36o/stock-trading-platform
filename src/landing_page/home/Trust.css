@@ -1,0 +1,64 @@
+.trust {
+  margin-top: 150px;
+}
+
+h2 {
+  font-size: 48px;
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  text-align: center;
+  line-height: 48px;
+  color: rgb(25, 28, 30);
+}
+.highlight {
+  position: relative;
+  display: block;
+  text-align: center;
+}
+
+.highlight::after {
+  content: "";
+  position: absolute;
+
+  width: 90px;
+  height: 6px;
+
+  background-color: #c7d4ea;
+  border-radius: 10px;
+
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -10px;
+}
+
+.trust p {
+  color: rgb(65, 71, 81);
+  font-size: 18px;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.card {
+  display: inline-block;
+  margin: 31px;
+  margin-top: 100px;
+  background-color: #f2f4f6;
+  height: 329px;
+  width: 370px;
+  padding: 40px;
+  border-radius: 30px;
+  border: none;
+}
+.card span {
+  font-size: 17px;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+.trust i {
+  margin-bottom: 30px;
+  padding: 10px;
+  font-size: 50px; /* size of icon */
+  color: #004786;
+}
