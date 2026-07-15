@@ -1,18 +1,19 @@
-import React from "react";
-import Navbar from "./Navbar";
+import Education from "./Education";
 import Hero from "./Hero";
-import Trust from "./Trust";
 import Pricing from "./Pricing";
+import Stats from "./Stats";
+import Header from "../Header";
+import Footer from "../Footer";
 import OpenAccount from "./OpenAccount";
-import Footer from "./Footer";
 
 export default function Homepage() {
   return (
     <>
-      <Navbar />
+      <Header />
       <Hero />
-      <Trust />
+      <Stats />
       <Pricing />
+      <Education />
       <OpenAccount />
       <Footer />
     </>
