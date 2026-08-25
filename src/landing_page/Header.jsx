@@ -1,12 +1,18 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 export default function Header() {
   return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary p-3 ">
       <div class="container-fluid">
-        <img
-          style={{ height: "30px" }}
-          src="asset/logo.svg"
-          class="navbar-brand "
-        ></img>
+        <Link to="/">
+          <img
+            style={{ height: "30px" }}
+            src="asset/logo.svg"
+            class="navbar-brand "
+            alt="imgg"
+          ></img>
+        </Link>
         <button
           class="navbar-toggler"
           type="button"
@@ -24,29 +30,29 @@ export default function Header() {
             class="navbar-nav me-auto mb-2 mb-lg-0 "
           >
             <li class="nav-item" style={{ marginLeft: "30px" }}>
-              <a class="nav-link" href="">
+              <Link class="nav-link" to="/signup">
                 Signup
-              </a>
+              </Link>
             </li>
             <li class="nav-item" style={{ marginLeft: "70px" }}>
-              <a class="nav-link" href="">
+              <Link class="nav-link" to="/about">
                 About
-              </a>
+              </Link>
             </li>
             <li class="nav-item" style={{ marginLeft: "70px" }}>
-              <a class="nav-link" href="">
+              <Link class="nav-link" to="/products">
                 Products
-              </a>
+              </Link>
             </li>
             <li class="nav-item" style={{ marginLeft: "70px" }}>
-              <a class="nav-link" href="">
+              <Link class="nav-link" to="/pricing">
                 Pricing
-              </a>
+              </Link>
             </li>
             <li class="nav-item" style={{ marginLeft: "70px" }}>
-              <a class="nav-link" href="">
+              <Link class="nav-link" to="/support">
                 Support
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
