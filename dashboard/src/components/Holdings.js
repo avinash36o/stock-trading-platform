@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { holdings } from "../data/data.js";
 import axios from "axios";
 const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
