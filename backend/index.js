@@ -5,15 +5,18 @@ const app = express();
 const mongoose = require("mongoose");
 const cors = require("cors");
 const bodyParser = require("body-parser");
-const { HoldingsModel } = require("./model/HoldinModel.js");
-const { PositionsModel } = require("./model/PositionsModel.js");
-const { OrdersModel } = require("./model/OrdersModel.js");
+const { HoldingsModel } = require("./Models/HoldinModel.js");
+const { PositionsModel } = require("./Models/PositionsModel.js");
+const { OrdersModel } = require("./Models/OrdersModel.js");
+const { Signup, Login } = require("./Controllers/AuthController");
+const cookieParser = require("cookie-parser");
 
 const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
 
 app.use(cors());
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 // app.get("/addholdings", async (req, res) => {
 //   let tempHolding = [
@@ -174,6 +177,11 @@ app.get("/allPositions", async (req, res) => {
   res.json(allPositions);
 });
 
+app.get("/allOrders", async (req, res) => {
+  const allOrders = await OrdersModel.find({});
+  res.json(allOrders);
+});
+
 app.post("/newOrder", async (req, res) => {
   let newOrder = new OrdersModel({
     name: req.body.name,
@@ -184,6 +192,9 @@ app.post("/newOrder", async (req, res) => {
   newOrder.save();
   res.send("new Order Added!");
 });
+
+app.post("/signup", Signup);
+app.post("/login", Login);
 
 app.listen(PORT, () => {
   console.log("App started!");
